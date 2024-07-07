@@ -15,14 +15,15 @@ The LLM (Language Model) Agent is a Python-based assistant powered by OpenAI's G
 
    ```bash
    git clone <repository_url>
-   cd LLM-Agent
+   cd EHRAgent
 
 2. Set Environment Variables: Configure your environment variables for database connection and model configuration:
-**database.py**
+
+   **database.py**
    ```
    export DB_CONNECTION_STRING='your_connection_string_here'
    ```
-**chatgpt_config.py**
+   **chatgpt_config.py**
    ```
    OPENAI_API_KEY = '<Your API Key>'
    openai.api_key = OPENAI_API_KEY
