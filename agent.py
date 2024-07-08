@@ -1,9 +1,10 @@
 import openai
 import logging
 import unicodedata
-import pyodbc  # Import pyodbc for database connectivity
+import pyodbc
 from chatgpt_config import GPT_MODEL
 from prompt import generate_prompt
+from datetime import datetime
 
 class LLM_Agent:
     def __init__(self, db_config):
@@ -60,9 +61,12 @@ class LLM_Agent:
                 error_message = f"Error occurred with the generated code:\n{code}\nError details:\n{str(e)}\n"
                 self.log_interaction(question, error_message, code, success=False)
                 prompt = self.update_prompt(prompt, e)
-
+        
+        current_time = datetime.now()
+        formatted_time = current_time.strftime("%Y%m%d%H%M%S")
+        file_name = f'result/result-{formatted_time}.py'  
         if final_code:
-            with open('result.py', 'w') as file:
+            with open(file_name, 'w') as file:
                 file.write(final_code)
             return "Execution successful"
         else:
