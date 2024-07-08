@@ -17,7 +17,12 @@ The LLM (Language Model) Agent is a Python-based assistant powered by OpenAI's G
    git clone <repository_url>
    cd EHRAgent
 
-2. Set Environment Variables: Configure your environment variables for database connection and model configuration:
+2. Install the needed packages
+
+   ```bash
+   pip install -r requirements.txt
+
+3. Set Environment Variables: Configure your environment variables for database connection and model configuration:
 
    **database.py**
    ```
@@ -29,4 +34,5 @@ The LLM (Language Model) Agent is a Python-based assistant powered by OpenAI's G
    openai.api_key = OPENAI_API_KEY
    GPT_MODEL = '<Your Model's Name>'
    ```
+
    
